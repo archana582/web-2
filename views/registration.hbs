@@ -1,0 +1,52 @@
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <title class="text-center">Registration Page</title>
+    </head>
+    <body>
+    <div class="container">
+    <div class="row">
+    <div class="col-md-6 offset-md-3">
+    <div class="card">
+    <div class="card-header">
+    <h3 class="text-center">Registration Page</h3>
+    </div>
+    <div class="card-body">
+    <form method="post" action="/registration">
+    <div class="form-group">
+    <label>Firstname</label>
+    <input type="text" name="firstname" class="form-control" placeholder="Enter your firstname">
+    </div>
+    <div class="form-group">
+    <label>Lastname</label>
+    <input type="text" name="lastname" class="form-control" placeholder="Enter your lastname">
+    </div>
+    <div class="form-group">
+    <label>Phone</label>
+    <input type="text" name="phone" class="form-control" placeholder="Enter your phone number">
+    </div>
+    <div class="form-group">
+    <label>Address</label>
+    <textarea class="form-control" name="address" placeholder="Enter your address"></textarea>
+    </div>
+    <div class="form-group">
+    <label>Email</label>
+    <input type="email" name="email" class="form-control" placeholder="Enter your email">
+    </div>
+    <div class="form-group">
+    <label>Password</label>
+    <input type="password" name="pass" class="form-control" placeholder="Enter your password">
+    </div>
+    <div class="form-group">
+    <label>Re-type password</label>
+    <input type="password" name="repass" class="form-control" placeholder="Re-type your password">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+<!--render error message array elements as bootstrap alert if error exist-->
+{{#if errors}}
+{{#each errors}}
+<div class="alert alert-danger" role="alert">
+{{this}}
+</div>
+{{/each}}
+{{/if}}

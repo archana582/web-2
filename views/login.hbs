@@ -1,0 +1,45 @@
+{{!-- import bootstrap 5 --}}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+<body>
+  <body>
+    <div class="login-page">
+      <div class="form">
+        <div class="login">
+          <div class="login-header">
+            <h3>LOGIN</h3>
+            <p>Please enter your credentials to login.</p>
+          </div>
+        </div>
+        {{!-- <form class="login-form" method="post" action="/login" >
+          <input type="text" placeholder="username" name="username"/>
+          <input type="password" placeholder="password" name="password"/>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          <p class="message">Not registered? <a href="/registration">Create an account</a></p>
+        </form>
+      </div> --}}
+      {{!-- make the form beautiful using bootstrap 5 --}}
+      <form class="login-form" method="post" action="/login" >
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" name="username" class="form-control" placeholder="Enter your username">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" name="password" class="form-control" placeholder="Enter your password">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <p class="message">Not registered? <a href="/registration">Create an account</a></p>
+      </form>
+
+
+    </div>
+    <!--render error message array elements as bootstrap alert if error exist-->
+{{#if errors}}
+{{#each errors}}
+<div class="alert alert-danger" role="alert">
+{{this}}
+</div>
+{{/each}}
+{{/if}}
+
+</body>
